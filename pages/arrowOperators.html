@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Square Numbers Visualizer</h2>
+    <input type="text" id="numberInput" placeholder="Enter numbers separated by commas...">
+    <br>
+    <button onclick="calculateSquares()">Square the Numbers</button>
+    
+    <div id="result"></div>
+
+    <script>
+        const calculateSquares = () => {
+
+            const input = document.getElementById("numberInput").value;
+
+            const numbers = input.split(",").map (num => parseFloat(num.trim()));
+
+            const validNumbers = numbers.filter(num => !isNaN(num));
+
+            const squaredNumbers = validNumbers.map(num => num * num);
+            
+            document.getElementById("result").innerHTML = 
+                `<p>Squared Numbers: <strong>${squaredNumbers.join(", ")}</strong></p>`;
+        };
+
+
+    </script>
+
+</body>
+</html>
+
