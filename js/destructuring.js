@@ -50,7 +50,7 @@ function displayProduct(product) {
   const {
     title,
     price,
-    details: { brand },
+    details: { brand = "Unknown Brand" },
   } = product;
   console.log(`${title} by ${brand} cost $${price}`);
 }
