@@ -46,6 +46,8 @@ const product = {
 // 👉 Inside the function, use destructuring to extract `title`, `price`, and `brand`
 // 👉 Console log: "Laptop by Dell costs $1200."
 // Call the function here
+
+
 function displayProduct(product) {
   const {
     title,
