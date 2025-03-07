@@ -3,7 +3,6 @@ const colors = ["red", "green", "blue", "yellow"];
 
 // 👉 Extract the first two colors into variables `firstColor` and `secondColor`
 // 👉 Store the rest of the colors in a variable called `otherColors`
-
 const [firstColor, secondColor, ...otherColors] = colors;
 console.log(firstColor, secondColor, otherColors);
 
@@ -46,7 +45,6 @@ const product = {
 // 👉 Inside the function, use destructuring to extract `title`, `price`, and `brand`
 // 👉 Console log: "Laptop by Dell costs $1200."
 // Call the function here
-
 
 function displayProduct(product) {
   const {
