@@ -18,7 +18,10 @@
 
 const display = document.getElementById("display");
 
-const appendToDisplay = (input) => (display.value += input);
+const appendToDisplay = (input) => {
+  display.value += input;
+  updateDisplayView();
+};
 
 const clearDisplay = () => (display.value = display.value.slice(0, -1));
 const allClearDisplay = () => (display.value = "");
@@ -38,4 +41,8 @@ buttons.forEach((button) => {
   });
 });
 
-
+const updateDisplayView = () => {
+  setTimeout(() => {
+    display.setSelectionRange(display.value.length, display.value.length);
+  }, 10);
+};
