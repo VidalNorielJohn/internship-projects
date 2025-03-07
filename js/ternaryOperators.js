@@ -20,6 +20,7 @@
 // let discount = purchaseAmount >= 100 ? 10 : 0;
 // console.log(
 //   `You're Total is: $${purchaseAmount - purchaseAmount * (discount / 100)}`
+// );
 
 // 1. Check if a number is positive, negative, or zero
 // Use a ternary operator to classify num as "Positive", "Negative", or "Zero".

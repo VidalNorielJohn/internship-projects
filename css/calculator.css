@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 10%);
+  font-family: "Poppins", sans-serif;
+}
+
+#calculator {
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#display {
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 3rem;
+  text-align: right;
+  background-color: hsl(0, 0%, 20%);
+  border: none;
+  color: white;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding-top: 15px;
+}
+
+button {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: none;
+  color: white;
+  background-color: hsl(0, 0%, 30%);
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 40%);
+}
+
+button:active {
+  background-color: hsl(0, 0%, 50%);
+  transform: scale(0.95);
+}
+
+.operator-btn {
+  background-color: hsl(35, 100%, 55%);
+}
+
+.operator-btn:hover {
+  background-color: hsl(35, 100%, 65%);
+}
+
+.operator-btn:active {
+  background-color: hsl(35, 100%, 75%);
+}
+
+/* ✅ Mobile-friendly adjustments */
+@media (max-width: 480px) {
+  #calculator {
+    max-width: 90%;
+  }
+
+  #display {
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 1.8rem;
+  }
+}
