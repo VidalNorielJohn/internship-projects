@@ -1,0 +1,213 @@
+/* App.css */
+
+/* Theme Colors */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #f4f7f9;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --success-color: #2ecc71;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Reset Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Content Layout */
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 20px;
+  min-height: 220px;
+}
+
+/* Todo List */
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-list li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.todo-list li:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.todo-list li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-status {
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  font-size: 1rem;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.refresh-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.refresh-button:hover {
+  background-color: #2980b9;
+}
+
+.refresh-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.edit-button {
+  background-color: #f39c12;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #e67e22;
+}
+
+.delete-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Dog Image */
+.dog-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dog-image {
+  max-width: 100%;
+  max-height: 320px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.dog-image:hover {
+  transform: scale(1.05);
+}
+
+/* Error Messages */
+.error-message {
+  color: var(--accent-color);
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 15px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+}
