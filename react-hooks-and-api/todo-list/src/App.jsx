@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Loading } from "./components/Loading";
-import { TodoList } from "./components/TodoList"; 
+import { TodoList } from "./components/TodoList";
 import "./style/App.css";
 import "./style/TodoList.css";
 
@@ -11,7 +11,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch Todos from API
   useEffect(() => {
     const fetchTodos = async () => {
       try {
@@ -31,7 +30,7 @@ export default function App() {
     fetchTodos();
   }, []);
 
-  // Fetch Random Doggeh Image
+  // Random Doggeh Image
   useEffect(() => {
     const fetchDogImage = async () => {
       try {
@@ -68,7 +67,7 @@ export default function App() {
       <main className="content-container">
         <section className="card todo-section">
           <div className="card-header">
-            <h2>My Interactive Todo List</h2>
+            <h2>Interactive Todo List</h2>
           </div>
           <div className="card-content">
             {" "}
@@ -97,7 +96,7 @@ export default function App() {
                   </li>
                 ))}
               </ul>
-            )}
+            )}        
           </div>
         </section>
 

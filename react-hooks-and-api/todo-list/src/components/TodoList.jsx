@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Loading } from "./Loading";
+
 export function TodoList() {
-  // Load local todos or default to an empty array
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
@@ -13,15 +13,13 @@ export function TodoList() {
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState("");
 
-  // Fetch initial todos from JSONPlaceholder API
   useEffect(() => {
     const fetchTodos = async () => {
       try {
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/todos?_limit=5"
+          "https://jsonplaceholder.typicode.com/todos"
         );
         setTodos((prevTodos) => {
-          // Merge localStorage todos with API todos (avoid duplicates)
           const localTodos = prevTodos.filter((t) => !t.api);
           return [
             ...response.data.map((t) => ({ ...t, api: true })),
@@ -39,12 +37,10 @@ export function TodoList() {
     fetchTodos();
   }, []);
 
-  // Save todos to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Add a new todo
   const addTodo = (e) => {
     e.preventDefault();
     if (inputValue.trim() === "") return;
@@ -53,14 +49,13 @@ export function TodoList() {
       id: Date.now(),
       title: inputValue.trim(),
       completed: false,
-      api: false, // Mark as local todo
+      api: false,
     };
 
     setTodos([...todos, newTodo]);
     setInputValue("");
   };
 
-  // Toggle completion
   const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -69,12 +64,10 @@ export function TodoList() {
     );
   };
 
-  // Delete a todo
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // Start editing a todo
   const startEditing = (id, text) => {
     setEditingId(id);
     setEditText(text);
@@ -93,6 +86,7 @@ export function TodoList() {
   return (
     <div className="todo-container">
       <form className="todo-form" onSubmit={addTodo}>
+        {" "}
         <input
           type="text"
           className="todo-input"

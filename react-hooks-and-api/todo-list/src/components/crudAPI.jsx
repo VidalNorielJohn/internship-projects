@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "https://jsonplaceholder.typicode.com/todos"; // Replace with your API
-
+const API_URL = "https://jsonplaceholder.typicode.com/todos"; 
 function TodoApp() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
 
   // Read (Fetch Todos)
   useEffect(() => {
-    fetch(API_URL + "?_limit=5") // Fetch only 5 todos
+    fetch(API_URL + "?_limit=5") 
       .then((res) => res.json())
       .then((data) => setTodos(data))
       .catch((err) => console.error("Error fetching todos:", err));
