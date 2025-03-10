@@ -16,7 +16,7 @@ export default function App() {
       try {
         setIsLoading(true);
         const result = await axios.get(
-          "https://jsonplaceholder.typicode.com/todos"
+          "https://jsonplaceholder.typicode.com/todos?_limit=5"
         );
         setTodos(result.data.slice(0, 10));
         setIsLoading(false);
@@ -96,7 +96,7 @@ export default function App() {
                   </li>
                 ))}
               </ul>
-            )}        
+            )}
           </div>
         </section>
 
